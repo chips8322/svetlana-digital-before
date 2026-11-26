@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Светлана Щукина — предыдущий вариант</title>
+<meta name="description" content="">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Сайт собирается">
+<meta property="og:description" content="">
+<meta property="og:type" content="website">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Светлана Щукина",
+  "jobTitle": "Цифровые решения для бизнеса: сайты, приложения, ИИ-агенты, автоматизация и продвижение",
+  "description": "Светлана Щукина создаёт сайты, приложения, ИИ-агентов, автоматизации и digital-продукты для бизнеса. Она показывает технологии не как холодную сложность, а как понятный, красивый и работающий инструмент рядом с экспертом. Главный принцип: человек управляет технологиями, а не технологии человеком.",
+  "sameAs": [
+    "https://vk.ru/svetlana_print",
+    "https://t.me/svetlana_print"
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Manrope:wght@400;600&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>
+:root {
+  --шрифт-заголовков: Montserrat, system-ui, sans-serif;  --шрифт-текста: Manrope, -apple-system, 'Segoe UI', sans-serif;
+  --цвет-фон: #FFF7ED;  --цвет-фон-2: #F7EFE6;  --цвет-фон-карточки: #FFF7ED;
+  --цвет-текст: #190902;  --цвет-текст-мягкий: #512D16;  --цвет-текст-тихий: #826C5C;
+  --цвет-акцент: #B96F27;  --цвет-акцент-тёмный: #E8A631;  --цвет-акцент-яркий: #F6BA42;  --цвет-на-акценте: #190902;
+  --цвет-акцент-глубже: #9C6721;  --цвет-акцент-маркер: #DA962E;
+  --цвет-линия: #E7CFB7;
+  --цвет-тёмный-фон: #190902;  --цвет-тёмный-фон-2: #2E1507;  --цвет-тёмный-текст: #FFF7ED;
+  --цвет-тёмный-фон-3: #210E04;  --цвет-тёмный-фон-4: #190902;
+  --цвет-тёплый: #F2C896;  --цвет-тёплый-мягкий: #F8E1C4;
+  --цвет-стекло: color-mix(in srgb, #190902 86%, transparent);
+  --тень: 0 12px 30px color-mix(in srgb, #190902 5%, transparent);
+  --тень-чип: 0 10px 26px color-mix(in srgb, #190902 10%, transparent);
+  --тень-глубокая: 0 22px 54px color-mix(in srgb, #190902 28%, transparent);
+  --тень-спутник: 0 26px 54px color-mix(in srgb, #190902 62%, transparent);
+  --тень-плиты: 0 34px 82px color-mix(in srgb, #190902 54%, transparent);
+  --кегль-h1: 32px;  --кегль-h2: clamp(28px, 4.2vw, 42px);
+  --кегль-текст: clamp(16px, 1vw, 17px);  --кегль-лид: clamp(17px, 1.1vw, 18px);
+  --кегль-мелкий: 14px;  --кегль-кикер: clamp(14px, 1.1vw, 15px);  --кегль-цифра: 30px;  --разрядка-кикера: .03em;
+  --отступ-секции: clamp(58px, 8.5vw, 112px);  --отступ-блока: clamp(16px, 2vw, 28px);
+  --отступ-секции-тихо: clamp(45px, 6.6vw, 88px);  --отступ-секции-громко: clamp(66px, 10vw, 130px);
+  --ширина: 1380px;  --ширина-колонки: 560px;  --радиус: 18px;  --радиус-малый: 10px;
+  --радиус-карточки: 20px;  --радиус-плитки: 24px;  --радиус-телефон: 46px;  --кнопка-радиус: 14px;
+  --радиус-модуля: 16px;  --нить: 2px;
+  --плавность: cubic-bezier(.2, .7, .2, 1);  --длительность: .25s;
+  --цвет-тёплый-тёмный: #A36214;
+}
+@media (min-width: 900px) {
+  :root { --кегль-h1: clamp(42px, 3.7vw, 54px); }
+}
+</style>
+<script>
+(function () {
+  var ЭТАЛОН = 0.535;                  // очко Open Sans — текстовой гарнитуры утверждённых макетов
+  var ПОТОЛОК = 1.2, МЁРТВАЯ = 0.02;   // выше потолка расползается раскладка; ближе к единице не трогаем вовсе
+  var КОМПЬЮТЕР = "(min-width: 900px)";
+  var ТОКЕНЫ = ["--кегль-текст", "--кегль-лид", "--кегль-мелкий", "--кегль-кикер"];
+  var корень = document.documentElement;
+  var холст = document.createElement("canvas").getContext("2d");
+  var ждём = 0;
+
+  function мера(буква) { var м = холст.measureText(буква); return (м && м.actualBoundingBoxAscent) || 0; }
+
+  function применить() {
+    ждём = 0;
+    if (!холст) { return; }
+
+    for (var i = 0; i < ТОКЕНЫ.length; i++) { корень.style.removeProperty(ТОКЕНЫ[i]); }
+    var стиль = getComputedStyle(корень), стек = стиль.getPropertyValue("--шрифт-текста").trim();
+    if (!стек) { return; }
+    холст.font = "400 100px " + стек;
+
+    var очко = Math.max(мера("х"), мера("x")) / 100;
+    if (!(очко > 0)) { return; }
+    var k = Math.round(Math.min(ПОТОЛОК, Math.max(1, ЭТАЛОН / очко)) * 1000) / 1000;
+    if (k - 1 < МЁРТВАЯ || !matchMedia(КОМПЬЮТЕР).matches) { k = 1; }
+    корень.setAttribute("data-очко", очко.toFixed(3));      // чтобы проверка могла сказать числа вслух
+    корень.setAttribute("data-поправка", k.toFixed(3));
+    if (k === 1) { return; }
+    for (i = 0; i < ТОКЕНЫ.length; i++) {
+      var было = стиль.getPropertyValue(ТОКЕНЫ[i]).trim();
+      if (было) { корень.style.setProperty(ТОКЕНЫ[i], "calc((" + было + ") * " + k + ")"); }
+    }
+  }
+
+  применить();
+
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(применить); }
+
+  addEventListener("resize", function () { ждём = ждём || requestAnimationFrame(применить); });
+})();
+</script>
+</head>
+<body class="с-липкой-кнопкой">
+<section class="блок блок--первый-экран hero тёмный фон--зерно" id="экран-1" data-тип="первый-экран" data-схема="сцена" data-ключ-макета="тёмная" data-картинка="фото" aria-labelledby="hero-title"><div class="стык стык--низ" aria-hidden="true" style="--стык-сосед: var(--цвет-фон)"></div>
+  <link rel="stylesheet" href="prototypes/hero-premium-interactive/premium.css?v=10">
+  <div class="hero__glow hero__glow--one" aria-hidden="true"></div>
+  <div class="hero__glow hero__glow--two" aria-hidden="true"></div>
+
+  <header class="nav shell">
+    <a class="nav__brand" href="#hero-title" aria-label="Светлана Щукина, начало страницы">
+      <span class="nav__mark" aria-hidden="true">С</span>
+      <span>Светлана Щукина</span>
+    </a>
+    <nav class="nav__links" aria-label="Основная навигация">
+      <a href="#экран-02">Что можно заказать</a>
+    </nav>
+    <a class="nav__contact" href="https://vk.ru/svetlana_print">Обсудить проект</a>
+  </header>
+
+  <div class="hero__layout shell">
+    <div class="hero__copy">
+      <p class="hero__eyebrow">Цифровые продукты для бизнеса</p>
+      <h1 id="hero-title"><span class="hero__title-line">Превращаю сайт</span><span class="hero__title-line">в систему заявок</span><em class="hero__title-line">и роста дохода.</em></h1>
+      <p class="hero__lead">Создаю сайты, приложения и помощников на базе ИИ: от идеи и дизайна до запуска и продвижения.</p>
+
+          <div class="hero__actions первый-экран__действие">
+        <div class="hero__primary"><a class="кнопка кнопка--главная" href="https://vk.ru/svetlana_print">Обсудить задачу</a><span class="button__icon" aria-hidden="true">↗</span></div>
+        <a class="hero-button hero-button--quiet" href="#экран-02">Смотреть возможности</a>
+      </div>
+
+      <p class="hero__note">
+        <span class="hero__note-icon" aria-hidden="true"></span>
+        Можно прийти с идеей, текущим сайтом или задачей, которую пока сложно сформулировать.
+      </p>
+    </div>
+
+    <div class="showcase" data-showcase data-active="product">
+      <div class="showcase__meta">
+        <span><i aria-hidden="true"></i> Система в работе</span>
+        <span>Реальные проекты</span>
+      </div>
+
+      <div class="showcase__stage первый-экран__картинка" id="showcase-panel" role="tabpanel" aria-labelledby="tab-product" data-stage tabindex="0">
+        <div class="showcase__orbit" aria-hidden="true"></div>
+
+        <article class="case-card case-card--product" data-card="product" aria-hidden="false">
+          <div class="case-card__chrome"><span></span><span></span><span></span><b>eventispro.ru</b></div>
+          <img src="img/visuals/screen04-01-eventispro.png" alt="Личный кабинет платформы деловых мероприятий ЭвентисПро" fetchpriority="high">
+        </article>
+
+        <article class="case-card case-card--ai" data-card="ai" aria-hidden="true">
+          <div class="case-card__chrome"><span></span><span></span><span></span><b>ai-upgrade.ru</b></div>
+          <img src="img/visuals/screen04-02-ai-upgrade.png" alt="Главный экран продукта AI Upgrade">
+        </article>
+
+        <article class="case-card case-card--growth" data-card="growth" aria-hidden="true">
+          <div class="case-card__chrome"><span></span><span></span><span></span><b>novostroyki74.ru</b></div>
+          <img src="img/visuals/screen04-03-novostroyki74.png" alt="Каталог новостроек с контентным продвижением">
+        </article>
+
+        <div class="showcase__caption" aria-live="off">
+          <span data-caption-type>Цифровой продукт</span>
+          <strong data-caption-title>Платформа, а не страница</strong>
+          <p data-caption-text>Регистрация, кабинеты, билеты, оплаты и рабочие сценарии собраны в одну систему.</p>
+        </div>
+      </div>
+
+      <div class="showcase__tabs" role="tablist" aria-label="Примеры направлений">
+        <button type="button" id="tab-product" role="tab" aria-controls="showcase-panel" aria-selected="true" data-tab="product">Продукт</button>
+        <button type="button" id="tab-ai" role="tab" aria-controls="showcase-panel" aria-selected="false" data-tab="ai">ИИ-помощник</button>
+        <button type="button" id="tab-growth" role="tab" aria-controls="showcase-panel" aria-selected="false" data-tab="growth">Продвижение</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__footer" aria-label="Этапы работы: стратегия, интерфейс, разработка, запуск, продвижение">
+    <div class="hero__ticker-track" aria-hidden="true">
+      <div class="hero__ticker-group"><span>Стратегия</span><i></i><span>Интерфейс</span><i></i><span>Разработка</span><i></i><span>Запуск</span><i></i><span>Продвижение</span><i></i></div>
+      <div class="hero__ticker-group"><span>Стратегия</span><i></i><span>Интерфейс</span><i></i><span>Разработка</span><i></i><span>Запуск</span><i></i><span>Продвижение</span><i></i></div>
+    </div>
+  </div>
+  <script src="prototypes/hero-premium-interactive/premium.js?v=7"></script>
+</section>
+<section class="блок блок--что-получите светлый" id="экран-02" data-тип="что-получите" data-вёрстка="своя"><div class="стык стык--верх" aria-hidden="true" style="--стык-сосед: var(--цвет-тёмный-фон)"></div><div class="стык стык--низ" aria-hidden="true" style="--стык-сосед: var(--цвет-тёмный-фон-2, var(--цвет-тёмный-фон))"></div>
+  <div class="блок__внутри">
+    <header class="направления__шапка">
+      <h2>Что можно заказать</h2>
+      <p>Можно начать с сайта или небольшой рабочей версии, а затем добавить личный кабинет, помощника на базе ИИ, отчёты и продвижение.</p>
+    </header>
+
+    <div class="направления" role="radiogroup" aria-label="Что можно заказать">
+      <input type="radio" name="экран-02-направление" id="экран-02-направление-1" checked>
+      <input type="radio" name="экран-02-направление" id="экран-02-направление-2">
+      <input type="radio" name="экран-02-направление" id="экран-02-направление-3">
+      <input type="radio" name="экран-02-направление" id="экран-02-направление-4">
+      <input type="radio" name="экран-02-направление" id="экран-02-направление-5">
+
+      <div class="направления__выбор">
+        <label for="экран-02-направление-1"><span class="направления__номер">01</span><span>Сайты и лендинги</span><span class="направления__стрелка" aria-hidden="true">↗</span></label>
+        <label for="экран-02-направление-2"><span class="направления__номер">02</span><span>Приложения и личные кабинеты</span><span class="направления__стрелка" aria-hidden="true">↗</span></label>
+        <label for="экран-02-направление-3"><span class="направления__номер">03</span><span>Интерактивные материалы</span><span class="направления__стрелка" aria-hidden="true">↗</span></label>
+        <label for="экран-02-направление-4"><span class="направления__номер">04</span><span>ИИ-помощники и автоматизация</span><span class="направления__стрелка" aria-hidden="true">↗</span></label>
+        <label for="экран-02-направление-5"><span class="направления__номер">05</span><span>Продвижение в поиске и картах</span><span class="направления__стрелка" aria-hidden="true">↗</span></label>
+      </div>
+
+      <div class="направления__панели" aria-live="polite">
+        <article class="направление направление--1">
+          <figure class="мокап направление__кадр"><img src="img/visuals/screen04-05-clubzemch.png" alt="Пример сайта: женский клуб Жемчуг" loading="lazy" decoding="async"></figure>
+          <div class="направление__текст">
+            <h3>Сайты и лендинги</h3>
+            <p>Структура, тексты, дизайн, адаптация, публикация.</p>
+          </div>
+        </article>
+        <article class="направление направление--2">
+          <figure class="мокап направление__кадр"><img src="img/visuals/screen04-01-eventispro.png" alt="Пример личного кабинета: платформа ЭвентисПро" loading="lazy" decoding="async"></figure>
+          <div class="направление__текст">
+            <h3>Приложения и личные кабинеты</h3>
+            <p>Личные кабинеты, формы заявок, оплата и управление доступом — всё в одном месте.</p>
+          </div>
+        </article>
+        <article class="направление направление--3">
+          <figure class="мокап направление__кадр"><img src="img/visuals/screen04-06-emotions.png" alt="Пример интерактивного материала «Эмоции по возрасту»" loading="lazy" decoding="async"></figure>
+          <div class="направление__текст">
+            <h3>Интерактивные материалы</h3>
+            <p>Тесты, мини-игры, цифровые открытки и презентации, с которыми хочется взаимодействовать.</p>
+          </div>
+        </article>
+        <article class="направление направление--4">
+          <figure class="мокап направление__кадр"><img src="img/visuals/screen04-02-ai-upgrade.png" alt="Пример сервиса с ИИ: AI Upgrade" loading="lazy" decoding="async"></figure>
+          <div class="направление__текст">
+            <h3>ИИ-помощники и автоматизация</h3>
+            <p>Помощники, которые отвечают по вашим материалам, помогают с заявками, отчётами и публикациями.</p>
+          </div>
+        </article>
+        <article class="направление направление--5">
+          <figure class="мокап направление__кадр"><img src="img/visuals/screen04-03-novostroyki74.png" alt="Пример сайта с каталогом и статьями: Новостройки74" loading="lazy" decoding="async"></figure>
+          <div class="направление__текст">
+            <h3>Продвижение в поиске и картах</h3>
+            <p>Страницы и статьи, которые помогают находить сайт в поиске, на картах и в ответах ИИ.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="блок блок--решение блок--тихо тёмный второй фон--зерно" id="экран-03" data-тип="решение" data-вёрстка="своя"><div class="стык стык--верх" aria-hidden="true" style="--стык-сосед: var(--цвет-фон)"></div><div class="стык стык--низ" aria-hidden="true" style="--стык-сосед: var(--цвет-фон)"></div>
+  <span class="сетка-текстура" aria-hidden="true"></span>
+  <div class="блок__внутри">
+    <header class="процесс__шапка">
+      <h2>Логика — Красота — Запуск.</h2>
+      <p>Хороший сайт или сервис начинается с понимания задачи: что нужно посетителю и какой результат важен для бизнеса.</p>
+    </header>
+    <ol class="лента" aria-label="Как работаем">
+      <li class="шаг"><input type="radio" name="экран-03-шаг" id="экран-03-шаг-1" checked><label for="экран-03-шаг-1"><span class="шаг__номер">01</span><b>Разбираем задачу</b><p>и путь посетителя.</p></label></li>
+      <li class="шаг"><input type="radio" name="экран-03-шаг" id="экран-03-шаг-2"><label for="экран-03-шаг-2"><span class="шаг__номер">02</span><b>Собираем структуру продукта:</b><p>кому, зачем, какие действия нужны.</p></label></li>
+      <li class="шаг"><input type="radio" name="экран-03-шаг" id="экран-03-шаг-3"><label for="экран-03-шаг-3"><span class="шаг__номер">03</span><b>Проектируем интерфейс</b><p>и визуальный стиль.</p></label></li>
+      <li class="шаг"><input type="radio" name="экран-03-шаг" id="экран-03-шаг-4"><label for="экран-03-шаг-4"><span class="шаг__номер">04</span><b>Разрабатываем</b><p>рабочую версию.</p></label></li>
+      <li class="шаг"><input type="radio" name="экран-03-шаг" id="экран-03-шаг-5"><label for="экран-03-шаг-5"><span class="шаг__номер">05</span><b>Подключаем заявки, отчёты,</b><p>автоматизацию или помощника на базе ИИ.</p></label></li>
+      <li class="шаг"><input type="radio" name="экран-03-шаг" id="экран-03-шаг-6"><label for="экран-03-шаг-6"><span class="шаг__номер">06</span><b>Запускаем и дорабатываем</b><p>по реальному использованию.</p></label></li>
+    </ol>
+  </div>
+</section>
+<section class="блок блок--работы светлый фон--зерно" id="экран-04" data-тип="работы" data-вёрстка="своя"><div class="стык стык--верх" aria-hidden="true" style="--стык-сосед: var(--цвет-тёмный-фон-2, var(--цвет-тёмный-фон))"></div>
+<div class="блок__внутри">
+  <div class="портфолио__шапка">
+    <h2>Живые примеры работ</h2>
+    <p>В портфолио — сайты, приложения, сервисы с ИИ, отчёты и интерактивные проекты.</p>
+  </div>
+  <div class="портфолио__сетка">
+    <a class="кейс" href="https://eventispro.ru/" target="_blank" rel="noopener noreferrer" aria-label="ЭвентисПро — открыть сайт проекта в новой вкладке">
+      <div class="работа">
+        <figure class="мокап работа__кадр"><img src="img/visuals/screen04-01-eventispro.png" alt="Личный кабинет платформы ЭвентисПро: форма входа" loading="lazy" decoding="async"></figure>
+        <span class="работа__формат">Платформа</span><span class="работа__номер" aria-hidden="true">01</span><h3 class="работа__название">ЭвентисПро</h3>
+      </div>
+      <p class="кейс__описание">Платформа для мероприятий: программа, регистрация, билеты, вход по QR-коду и личные кабинеты.</p>
+    </a>
+    <a class="кейс" href="https://clubzemch.ru/" target="_blank" rel="noopener noreferrer" aria-label="Жемчуг — открыть сайт проекта в новой вкладке">
+      <div class="работа"><figure class="мокап работа__кадр"><img src="img/visuals/screen04-05-clubzemch.png" alt="Главный экран сайта женского клуба Жемчуг" loading="lazy" decoding="async"></figure><span class="работа__формат">Сайт клуба</span><span class="работа__номер" aria-hidden="true">02</span><h3 class="работа__название">Жемчуг</h3></div>
+      <p class="кейс__описание">Сайт и цифровая среда женского клуба — афиша, галерея, вступление, клубная подача.</p>
+    </a>
+    <a class="кейс" href="https://ai-upgrade-d46d3.web.app/" target="_blank" rel="noopener noreferrer" aria-label="AI Upgrade — открыть сайт проекта в новой вкладке">
+      <div class="работа"><figure class="мокап работа__кадр"><img src="img/visuals/screen04-02-ai-upgrade.png" alt="Первый экран сайта AI Upgrade" loading="lazy" decoding="async"></figure><span class="работа__формат">Сервис с ИИ</span><span class="работа__номер" aria-hidden="true">03</span><h3 class="работа__название">AI Upgrade</h3></div>
+      <p class="кейс__описание">Проверка сайта и ИИ-консультант, который отвечает на вопросы по материалам компании.</p>
+    </a>
+    <a class="кейс" href="https://novostroyki74.ru/" target="_blank" rel="noopener noreferrer" aria-label="Новостройки74 — открыть сайт проекта в новой вкладке">
+      <div class="работа"><figure class="мокап работа__кадр"><img src="img/visuals/screen04-03-novostroyki74.png" alt="Первый экран сайта Новостройки74 с каталогом новостроек" loading="lazy" decoding="async"></figure><span class="работа__формат">Сайт и контент</span><span class="работа__номер" aria-hidden="true">04</span><h3 class="работа__название">Новостройки74</h3></div>
+      <p class="кейс__описание">Сайт для риелтора с каталогом новостроек и регулярными статьями для продвижения.</p>
+    </a>
+    <a class="кейс" href="https://avito-client-interactive.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Авито-отчёт — открыть пример отчёта в новой вкладке">
+      <div class="работа"><figure class="мокап работа__кадр"><img src="img/visuals/screen04-04-avito-report.png" alt="Интерактивный отчёт для клиента по рынку недвижимости" loading="lazy" decoding="async"></figure><span class="работа__формат">Интерактивный отчёт</span><span class="работа__номер" aria-hidden="true">05</span><h3 class="работа__название">Авито-отчёт</h3></div>
+      <p class="кейс__описание">Автоматизация для риелторов и интерактивный отчёт для клиента.</p>
+    </a>
+    <div class="кейс">
+      <div class="работа работа--без-кадра"><span class="работа__формат">Приложение</span><span class="работа__знак" aria-hidden="true">IM</span><span class="работа__номер" aria-hidden="true">06</span><h3 class="работа__название">Invites Mailer</h3></div>
+      <p class="кейс__описание">Приложение для почтовых рассылок: отправка писем и отчёты об открытии.</p>
+    </div>
+    <a class="кейс" href="https://emotions-b4f7c.web.app/" target="_blank" rel="noopener noreferrer" aria-label="Эмоции по возрасту — открыть интерактивный материал в новой вкладке">
+      <div class="работа"><figure class="мокап работа__кадр"><img src="img/visuals/screen04-06-emotions.png" alt="Первый экран интерактивной карты «Эмоции по возрасту»" loading="lazy" decoding="async"></figure><span class="работа__формат">Интерактив</span><span class="работа__номер" aria-hidden="true">07</span><h3 class="работа__название">Эмоции по возрасту</h3></div>
+      <p class="кейс__описание">Интерактивная карта для родителей: что важно ребёнку на разных этапах взросления.</p>
+    </a>
+    <a class="кейс" href="https://karusel-1-pwa.web.app/" target="_blank" rel="noopener noreferrer" aria-label="Генератор каруселей — открыть продукт в новой вкладке">
+      <div class="работа работа--без-кадра"><span class="работа__формат">Инструмент</span><span class="работа__знак" aria-hidden="true">К</span><span class="работа__номер" aria-hidden="true">08</span><h3 class="работа__название">Генератор каруселей</h3></div>
+      <p class="кейс__описание">Инструмент для постов и сторис.</p>
+    </a>
+  </div>
+</div>
+</section>
+<div class="липкая-кнопка липкая-кнопка--тёмная"><a class="кнопка кнопка--главная" href="https://vk.ru/svetlana_print">Обсудить задачу</a></div>
+<script>
+(function () {
+  var СПИТ = "главная-на-виду";                       // класс на body; правило сна — в стилях
+  var кнопка = document.querySelector(".первый-экран__действие .кнопка--главная");
+  if (!кнопка || !window.IntersectionObserver) { return; }
+
+  function пометить(на_виду) { document.body.classList.toggle(СПИТ, !!на_виду); }
+
+  var б = кнопка.getBoundingClientRect();
+  пометить(б.bottom > 0 && б.top < (window.innerHeight || 0));
+
+  requestAnimationFrame(function () {
+    requestAnimationFrame(function () { document.body.classList.add("панель-с-переходом"); });
+  });
+
+  new IntersectionObserver(function (записи) {
+    пометить(записи[записи.length - 1].isIntersecting);
+  }, { threshold: 0 }).observe(кнопка);
+})();
+</script>
+</body>
+</html>
